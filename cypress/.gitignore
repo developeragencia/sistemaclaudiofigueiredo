@@ -1,0 +1,25 @@
+# Cypress
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+cypress/results/
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Environment variables
+cypress.env.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db 

@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "plugin:cypress/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "cypress",
+    "@typescript-eslint"
+  ],
+  "env": {
+    "cypress/globals": true
+  },
+  "rules": {
+    "cypress/no-assigning-return-values": "error",
+    "cypress/no-unnecessary-waiting": "error",
+    "cypress/assertion-before-screenshot": "warn",
+    "cypress/no-force": "warn",
+    "cypress/no-async-tests": "error",
+    "@typescript-eslint/no-namespace": "off"
+  }
+} 

@@ -1,0 +1,35 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- First column -->
+  <polygon points="2,6 10,6 6,14" fill="#333333">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="2,14 10,14 6,22" fill="#333333">
+    <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3s" begin="0.3s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="2,22 10,22 6,30" fill="#333333">
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="3s" begin="0.6s" repeatCount="indefinite" />
+  </polygon>
+  
+  <!-- Second column -->
+  <polygon points="10,6 18,6 14,14" fill="#FFFFFF" stroke="#333333" stroke-width="0.5">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" begin="0.9s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="10,14 18,14 14,22" fill="#333333">
+    <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3s" begin="1.2s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="10,22 18,22 14,30" fill="#FFFFFF" stroke="#333333" stroke-width="0.5">
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="3s" begin="1.5s" repeatCount="indefinite" />
+  </polygon>
+  
+  <!-- Third column -->
+  <polygon points="18,6 26,6 22,14" fill="#FFFFFF" stroke="#333333" stroke-width="0.5">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" begin="1.8s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="18,14 26,14 22,22" fill="#FFFFFF" stroke="#333333" stroke-width="0.5">
+    <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3s" begin="2.1s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="18,22 26,22 22,30" fill="#FFFFFF" stroke="#333333" stroke-width="0.5">
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="3s" begin="2.4s" repeatCount="indefinite" />
+  </polygon>
+</svg>

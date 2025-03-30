@@ -1,0 +1,547 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+
+    --primary: 200 98% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 84% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 200 98% 39%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 200 98% 39%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 200 98% 15%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 200 84% 70%;
+    --sidebar-primary-foreground: 200 98% 15%;
+    --sidebar-accent: 200 98% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 200 98% 30%;
+    --sidebar-ring: 0 0% 80%;
+  }
+
+  .dark {
+    --background: 0 0% 12%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 20%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 200 84% 60%;
+    --primary-foreground: 0 0% 12%;
+
+    --secondary: 200 84% 40%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 200 84% 30%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 200 84% 60%;
+    
+    --sidebar-background: 200 98% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 200 84% 60%;
+    --sidebar-primary-foreground: 0 0% 15%;
+    --sidebar-accent: 200 84% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 200 84% 25%;
+    --sidebar-ring: 0 0% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-lg;
+  }
+  
+  .card-transition {
+    @apply transition-all duration-200 hover:shadow-lg;
+  }
+  
+  .nav-link {
+    @apply relative flex items-center gap-2 py-2 px-3 rounded-md transition-all duration-200;
+  }
+  
+  .nav-link::after {
+    @apply content-[""] absolute bottom-0 left-0 h-0.5 w-0 bg-current transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .cf-gradient-bg {
+    background: linear-gradient(135deg, #333333 0%, #666666 50%, #333333 100%);
+  }
+  
+  .cf-shadow {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .delay-100 {
+    transition-delay: 100ms;
+  }
+  
+  .delay-200 {
+    transition-delay: 200ms;
+  }
+  
+  .delay-300 {
+    transition-delay: 300ms;
+  }
+  
+  .delay-400 {
+    transition-delay: 400ms;
+  }
+  
+  .delay-500 {
+    transition-delay: 500ms;
+  }
+  
+  .delay-600 {
+    transition-delay: 600ms;
+  }
+  
+  .delay-700 {
+    transition-delay: 700ms;
+  }
+  
+  .delay-800 {
+    transition-delay: 800ms;
+  }
+  
+  .delay-900 {
+    transition-delay: 900ms;
+  }
+}
+
+/* Remove default styles */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes logo-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes logo-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes triangle-float {
+  0% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+}
+
+@keyframes triangle-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Cloned logo styles */
+.cloned-logo {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  transition: all 0.5s ease;
+}
+
+.cloned-logo:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+  animation: logo-pulse 1.5s infinite;
+}
+
+.logo-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+  border-bottom: 36px solid #C8C8C9;
+  animation: triangle-float 3s ease-in-out infinite;
+}
+
+.logo-circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #222222;
+  top: 20px;
+  animation: logo-pulse 2s infinite alternate;
+}
+
+.logo {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  transition: all 0.5s ease;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+  animation: logo-pulse 1.5s infinite;
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container:hover::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(128,128,128,0.2) 0%, rgba(0,0,0,0) 70%);
+  animation: logo-pulse 2s infinite;
+}
+
+.animate-logo {
+  animation: triangle-float 3s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-rotate {
+  animation: triangle-rotate 8s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: logo-pulse 3s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out forwards;
+}
+
+/* Scrollbar modifications */
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Card hover effects */
+.hover-card {
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* New animations for home page */
+.hover-scale {
+  transition: all 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  transform: rotate(30deg);
+  transition: all 0.5s ease;
+}
+
+.glass-card:hover::before {
+  transform: rotate(0deg);
+}
+
+/* Animated underline for links */
+.animated-link {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.animated-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Carousel custom animations */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+.carousel-item-enter {
+  animation: slide-in 0.4s ease forwards;
+}
+
+.carousel-item-exit {
+  animation: slide-out 0.4s ease forwards;
+}
+
+/* Custom embla carousel styling */
+.embla__slide {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.embla__slide.is-prev {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.embla__slide.is-next {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.embla__slide.is-selected {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Custom control buttons */
+.carousel-button {
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.carousel-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Custom carousel dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.2);
+}

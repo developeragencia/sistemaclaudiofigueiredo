@@ -1,0 +1,24 @@
+{
+  "extends": "@istanbuljs/nyc-config-typescript",
+  "all": true,
+  "check-coverage": true,
+  "reporter": ["text", "json", "html", "lcov"],
+  "exclude": [
+    "coverage/**",
+    "cypress/**",
+    "**/*.d.ts",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.cy.ts",
+    "**/*.cy.tsx",
+    "**/*.stories.ts",
+    "**/*.stories.tsx",
+    "**/node_modules/**"
+  ],
+  "statements": 80,
+  "branches": 80,
+  "functions": 80,
+  "lines": 80
+} 
